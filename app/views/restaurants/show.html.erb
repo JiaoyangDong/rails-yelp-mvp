@@ -2,5 +2,17 @@
 <p><%= @restaurant.category %></p>
 <p><%= @restaurant.address %></p>
 
-
+<%# reviews %>
+<div class="container p-2">
+  <h2> Reviews for <%= @restaurant.name %></h2>
+  <%= link_to "Add a new review", new_restaurant_review_path(@restaurant), class: "btn btn-primary" %>
+  <% unless @restaurant.reviews.empty? %>
+    <% @restaurant.reviews.each do |review| %>
+      <div class="card">
+        <p><%= "★" * review.rating %></p>
+        <p><%= review.content %></p>
+      </div>
+    <% end %>
+  <% end %>
+  </div>
 <%= link_to "Back", restaurants_path %>
