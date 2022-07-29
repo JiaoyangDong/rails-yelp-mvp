@@ -2,12 +2,14 @@
 <div class="contrainer">
   <div class="row">
     <% @restaurants.each do |restaurant|  %>
-      <div class="card w-25 p-3 m-2 col-12">
+  <%= link_to restaurant_path(restaurant), class: "col-6" do %>
+      <div class="card p-3 ">
         <h2><%= restaurant.name %></h2>
         <%= restaurant.address %>
         <%= restaurant.category %>
         <%= restaurant.phone_number %>
       </div>
+      <% end %>
     <% end %>
   </div>
 </div>
