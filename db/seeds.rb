@@ -5,9 +5,15 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-
 Restaurant.create(name: "Epicure", category: "french", address: "75008 Paris")
 Restaurant.create(name: "KFC", category: "italian", address: "524 Yanping Road")
 Restaurant.create(name: "burger king", category: "japanese", address: "130000 SH")
 Restaurant.create(name: "currify", category: "belgian", address: "430000 SH")
 Restaurant.create(name: "Zhangliang", category: "chinese", address: "240000 SH")
+
+# require 'faker'
+# Restaurant.all.each do |rest|
+#   (1..3).to_a.sample.times do
+#     rest.reviews.new(rating: (0..5).to_a.sample, content: Faker::Lorem.sentences)
+#   end
+# end
