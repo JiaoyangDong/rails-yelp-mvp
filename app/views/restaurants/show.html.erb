@@ -5,7 +5,7 @@
 <%# reviews %>
 <div class="container p-2">
   <h2> Reviews for <%= @restaurant.name %></h2>
-  <%= link_to "Add a new review", new_restaurant_review_path(@restaurant), class: "btn btn-primary" %>
+  <%# link_to "Add a new review", new_restaurant_review_path(@restaurant), class: "btn btn-primary" %>
   <% unless @restaurant.reviews.empty? %>
     <% @restaurant.reviews.each do |review| %>
       <div class="card">
@@ -14,5 +14,17 @@
       </div>
     <% end %>
   <% end %>
+  <%# new review %>
+  <h3>Add a new review</h3>
+  <div class="card py-2">
+    <%= simple_form_for([@restaurant, @review]) do |f| %>
+      <%= f.input :content %>
+      <%= f.input :rating %>
+      <%= f.submit %>
+    <% end %>
   </div>
+
+</div>
+
+
 <%= link_to "Back", restaurants_path %>
